@@ -1,0 +1,84 @@
+### Solicitud de destinos por id de usuario
+GET http://localhost:5000/api/destinos/usuarios/61238a20511857455409b8d2
+
+### Solicitud de destinos por id de destino
+GET http://localhost:5000/api/destinos/613a8757662a7f0a8cf35655
+
+### POST creación de destinos
+POST http://localhost:5000/api/destinos/ HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "Seychelles",
+    "descripcion": "Playas de blancas arenas y azules aguas",
+    "localizacion": {
+        "lat": 22.3022825,
+        "lng": -14.5240189
+    },
+    "direccion": "Océano Índico, 2ºIzquierda",
+    "creador": "613a850b662a7f0a8cf3564c"
+}
+
+### POST creación de destinos (II)
+POST http://localhost:5000/api/destinos/ HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhODUwYjY2MmE3ZjBhOGNmMzU2NGMiLCJlbWFpbCI6InJvbmpvbmVzQGdtYWlsLmNvbSIsImlhdCI6MTYzMTIyNTY3MiwiZXhwIjoxNjMxMjI5MjcyfQ.b03UcGK7UC_c-_y45OAEOu53WimYZJGQ0WrL3PUPjok
+
+{
+    "nombre": "Dunas de Maspalomas",
+    "descripcion": "Paradisíaco lugar del sur de Gran Canaria con una magnífica playa bajo cielos azules",
+    "localizacion": {
+      "lat": 27.7449968,
+      "lng": -15.5786953
+    },
+    "direccion": "Reserva Natural Especial de Las Dunas de Maspalomas",
+    "creador": "613a850b662a7f0a8cf3564c"
+}
+
+### Solicitud de destino inexistente
+GET http://localhost:5000/api/u564
+
+### Actualización de destino 
+PATCH http://localhost:5000/api/destinos/613a8757662a7f0a8cf35655 HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhODUwYjY2MmE3ZjBhOGNmMzU2NGMiLCJlbWFpbCI6InJvbmpvbmVzQGdtYWlsLmNvbSIsImlhdCI6MTYzMTIyNTY3MiwiZXhwIjoxNjMxMjI5MjcyfQ.b03UcGK7UC_c-_y45OAEOu53WimYZJGQ0WrL3PUPjok
+
+{
+    "nombre": "nombre actualizado",
+    "descripcion": "Impresionante"
+}
+
+### Eliminación de destino por su id
+DELETE http://localhost:5000/api/destinos/613a8a3739f8af25f4d8f84e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhODUwYjY2MmE3ZjBhOGNmMzU2NGMiLCJlbWFpbCI6InJvbmpvbmVzQGdtYWlsLmNvbSIsImlhdCI6MTYzMTIyNTY3MiwiZXhwIjoxNjMxMjI5MjcyfQ.b03UcGK7UC_c-_y45OAEOu53WimYZJGQ0WrL3PUPjok
+######################################
+###            USUARIOS            ###
+#####################################
+
+
+### Lista de usuarios
+GET http://localhost:5000/api/usuarios/
+### Lista de usuarios
+GET https://cifebe.herokuapp.com/api/usuarios/
+
+### POST crear usuarios
+POST http://localhost:5000/api/usuarios/alta HTTP/1.1
+content-type: application/json
+
+{
+    "nombre": "nmobre2",
+    "email": "ronjones0a@gmail.com",
+    "password": "123456"
+}
+
+### POST login usuarios
+POST http://localhost:5000/api/usuarios/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "ronjones@gmail.com",
+    "password": "123456"
+}
+### borrar destino por id
+DELETE http://localhost:5000/api/destinos/613a8a3739f8af25f4d8f84e HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTNhODUwYjY2MmE3ZjBhOGNmMzU2NGMiLCJlbWFpbCI6InJvbmpvbmVzQGdtYWlsLmNvbSIsImlhdCI6MTYzMTIzMzI3MiwiZXhwIjoxNjMxMjM2ODcyfQ.gKa6Tjfncn5pTWXG99TX_9fRflWJjgST-vokyC3c30k
